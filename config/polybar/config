@@ -1,0 +1,101 @@
+[colors]
+background = #E61E1E2E
+background-alt = #E61A1826
+
+foreground = #D9E0EE
+foreground-alt = #C9CBFF
+alert = #F28FAD
+
+[bar/simple]
+width = 100%
+height = 27
+radius = 0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 2
+module-margin-right = 1
+
+border-size = 0
+
+font-0 = Noto Sans:pixelsize=13;1
+modules-left = i3
+separator = "//"
+separator-padding = 0
+modules-right = pulseaudio battery date
+
+tray-position = right
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+enable-click = true
+
+label-mode-padding = 2
+label-mode-background = ${colors.background}
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-foreground = ${colors.foreground-alt}
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-background = ${colors.background}
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-padding = ${self.label-focused-padding}
+
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+[module/battery]
+type = internal/battery
+full-at = 98
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 5
+
+label-charging = + %percentage%
+
+label-discharging = - %percentage%
+
+label-full = = 100%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+interval = 5
+
+label-volume = %percentage%%
+
+label-muted = muted
+
+ramp-volume-0 = "" 
+
+click-right = pavucontrol
+
+[module/date]
+type = internal/date
+
+interval = 1.0
+
+deate = %Y-%m-%d%
+
+time = %H:%M:%S
+
+date-alt = %A, %d %B %Y
+time-alt = %H:%M:%S
+
+format = <label>
+label = %date% %time%
