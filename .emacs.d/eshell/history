@@ -1,0 +1,24 @@
+https://raw.githubusercontent.com/jasonm23/emacs-assemblage-theme/master/assemblage-theme.el
+curl https://raw.githubusercontent.com/jasonm23/emacs-assemblage-theme/master/assemblage-theme.el -o themes/
+ls themes
+ls
+mkdir themes
+curl https://raw.githubusercontent.com/jasonm23/emacs-assemblage-theme/master/assemblage-theme.el -o themes/
+curl https://raw.githubusercontent.com/jasonm23/emacs-assemblage-theme/master/assemblage-theme.el -o themes/assemblage-theme.el
+exit
+ls
+rm -rf autothemer-20220106.416/
+rm -rf doom-themes-20220222.2326/
+rm -rf ewal-
+rm -rf ewal-20200305.230/
+rm -rf ewal-doom-themes-20200922.325/
+rm -rf evil-1.14.0
+rm -rf evil-1.14.0.signed 
+rm -rf iceberg-theme-20200
+rm -rf kaolin-themes-20220408.633/
+rm -rf solarized-theme-20220324.445/
+cp ../../tetris/makefile ../makefile
+cd ..
+ls
+edit makefile
+rm build.sh 
